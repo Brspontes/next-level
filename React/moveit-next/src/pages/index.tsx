@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { ChallengeBox } from '../components/ChallengeBox'
 import { CompletedChellenges } from '../components/CompletedChallenges'
 import { Coutdown } from '../components/Coutdown'
 import { ExperienceBar } from '../components/ExperienceBar'
@@ -19,7 +20,7 @@ export default function Home() {
           <Coutdown />
         </div>
         <div>
-          
+          <ChallengeBox />
         </div>
       </section>
     </div>
