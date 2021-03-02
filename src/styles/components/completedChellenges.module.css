@@ -9,10 +9,30 @@
     font-weight: 500;
 }
 
+.completedChellengesContainerDark {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3.5rem 0;
+    border-bottom: 1px solid #D7D8DA;
+
+    font-weight: 500;
+    color: aliceblue;
+}
+
 .completedChellengesContainer span:first-child {
     font-size: 1.25rem;
 }
 
 .completedChellengesContainer span:last-child {
+    font-size: 1.5rem;
+}
+
+.completedChellengesContainerDark span:first-child {
+    font-size: 1.25rem;
+}
+
+.completedChellengesContainerDark span:last-child {
     font-size: 1.5rem;
 }

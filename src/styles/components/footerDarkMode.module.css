@@ -12,21 +12,3 @@
     justify-content: right;
     align-items: center;
 }
-
-.buttonLight {
-    color: rgb(0, 0, 0);
-    background: var(--white);
-    width: 4rem;
-    height: 1.8rem;
-    border-radius: 10%;
-    border: 0;
-}
-
-.buttonDark {
-    color: var(--white);
-    background-color: rgb(0, 0, 0, 0.2);
-    width: 4rem;
-    height: 1.8rem;
-    border-radius: 10%;
-    border: 0;
-}

@@ -1,30 +1,33 @@
 import { useState, useEffect, useContext } from 'react'
 import styles from '../styles/components/footerDarkMode.module.css'
-import { ButtonGroup, Button } from 'reactstrap'
 import { ChallengesContext } from '../contexts/ChallengeContext';
+import  DarkModeToggle from 'react-dark-mode-toggle'
+import useDarkMode from 'use-dark-mode'
 
 export function FooterDarkMode() {
-    const [rSelected, setRSelected] = useState(null);
-    const { darkTheme, lightTheme} = useContext(ChallengesContext)
-    useEffect(() => {
-        if(rSelected === 2) {
+    const [isDarkMode, setIsDarkMode] = useState(()=>false)
+    const darkMode = useDarkMode(false)
+    
+    const { darkTheme, lightTheme } = useContext(ChallengesContext)
+
+    useEffect(()=>{
+        darkMode.toggle()
+        
+        if(!darkMode.value)
             darkTheme()
-        }
-        else {
+        else
             lightTheme()
-        }
-    }, [rSelected])
+            
+            
+
+    },[isDarkMode])
 
     return (
-        <div className={styles.footerBar}>
-            <ButtonGroup>
-              <Button className={styles.buttonLight}
-                onClick={() => setRSelected(1)} 
-                active={rSelected === 1}>Light</Button>
-              <Button className={styles.buttonDark}
-                onClick={() => setRSelected(2)} 
-                active={rSelected === 2}>Dark</Button>
-            </ButtonGroup>
-        </div>
+        <label className={styles.footerBar}>
+            <DarkModeToggle 
+            onChange={setIsDarkMode}
+            checked={isDarkMode}
+            size={60}/>
+        </label>
     )
 }

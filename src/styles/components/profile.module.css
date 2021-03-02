@@ -27,3 +27,33 @@
 .profileContainer div p img{
     margin-right: 0.5rem;
 }
+
+.profileContainerDark {
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+}
+
+.profileContainerDark > img {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+}
+
+.profileContainerDark > div {
+    margin-left: 1.5rem;
+}
+
+.profileContainerDark div strong {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.profileContainerDark div p {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.profileContainerDark div p img{
+    margin-right: 0.5rem;
+}

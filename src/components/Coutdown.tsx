@@ -21,7 +21,7 @@ export function Coutdown() {
 
     return (
         <div>
-            <div className={styles.coutdownContainer}>
+            <div className={theme === 'dark' ? styles.coutdownContainerDark : styles.coutdownContainer}>
                 <div>
                     <span>{minuteLeft}</span>
                     <span>{minuteRight}</span>

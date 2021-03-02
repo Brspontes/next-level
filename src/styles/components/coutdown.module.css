@@ -6,6 +6,26 @@
     color: var(--title);
 }
 
+.coutdownContainerDark {
+    display: flex;
+    align-items: center;
+    font-family: Radjhani;
+    font-weight: 600;
+    color:  rgba(0, 0, 0);
+}
+
+.coutdownContainerDark > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: rgba(250, 250, 250, 0.657);
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    font-size: 8.5rem;
+    text-align: center;
+}
+
 .coutdownContainer > div {
     flex: 1;
     display: flex;
@@ -22,12 +42,29 @@
     flex: 1;
 }
 
+.coutdownContainerDark > div span {
+    flex: 1;
+}
+
 .coutdownContainer > div span:first-child {
     border-right: 1px solid #F0F1F3;
 }
 
 .coutdownContainer > div span:last-child {
     border-left: 1px solid #F0F1F3;
+}
+
+.coutdownContainerDark > div span:first-child {
+    border-right: 1px solid #F0F1F3;
+}
+
+.coutdownContainerDark > div span:last-child {
+    border-left: 1px solid #F0F1F3;
+}
+
+.coutdownContainerDark > span {
+    font-size: 6.25rem;
+    margin: 0 0.5rem;
 }
 
 .coutdownContainer > span {
@@ -69,6 +106,7 @@
     color: var(--white);
     font-size: 1.25rem;
     font-weight: 600;
+    border: #F0F1F3 solid 1px;
 
     transition: 0.2s;
 }
@@ -95,6 +133,11 @@
 }
 
 .countdownButton:disabled > img {
+    width: 2rem;
+    padding-left: 10px;
+}
+
+.countdownButtonDark:disabled > img {
     width: 2rem;
     padding-left: 10px;
 }
