@@ -1,6 +1,8 @@
 import { useState, useEffect, useContext } from 'react'
+import { ChallengesContext } from '../contexts/ChallengeContext'
 import { CountdownContext } from '../contexts/CountdownContext'
 import styles from '../styles/components/coutdown.module.css'
+
 
 export function Coutdown() {
 
@@ -12,9 +14,11 @@ export function Coutdown() {
         resetCountdown, 
         startCountdown } = useContext(CountdownContext)
 
+    const { theme } = useContext(ChallengesContext)
+
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
-    
+
     return (
         <div>
             <div className={styles.coutdownContainer}>
@@ -29,18 +33,19 @@ export function Coutdown() {
                 </div>
             </div>
             { hasFineshed ? (
-                <button className={styles.countdownButton} disabled>
+                <button className={theme === 'dark' ? styles.countdownButtonDark : styles.countdownButton} disabled>
                     Ciclo Encerrado <img src="icons/checkOk.svg" alt="icoOk"/>    
                 </button>
             ) : 
             (
                 <>
                     { isActive ? (
-                    <button type="button" className={`${styles.countdownButton} ${styles.countdownButtonActive}`} onClick={resetCountdown}>
+                    <button type="button" className={`${theme === 'dark' ? styles.countdownButtonDark : styles.countdownButton} 
+                    ${styles.countdownButtonActive}`} onClick={resetCountdown}>
                         Abandonar Ciclo
                     </button>
             ):( 
-                    <button type="button" className={styles.countdownButton} onClick={startCountdown}>
+                    <button type="button" className={theme === 'dark' ? styles.countdownButtonDark : styles.countdownButton} onClick={startCountdown}>
                         Iniciar um ciclo
                     </button>
             )}  

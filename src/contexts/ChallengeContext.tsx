@@ -22,11 +22,14 @@ interface ChallengesContextData {
     challengesCompleted: number
     experienceToNextLevel: number
     activeChellange: Challenge
+    theme: string
     levelUp: () => void
     startNewChallenge: () => void
     resetChallenge: () => void
     completeChallenge: () => void
     closeLevelModal: () => void
+    darkTheme: () => void
+    lightTheme: () => void
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData)
@@ -41,14 +44,19 @@ export function ChallengesProvider({
     const [challengesCompleted, setchallengesCompleted] = useState(rest.challengeCompleted ?? 0)
     const [activeChellange, setActiveChellange] = useState(null)
     const [isLevelUpModalOpen, setisLevelUpModalOpen] = useState(false)
+    const [isLightTheme, setIsLightTheme] = useState(true)
+    const [theme, setTheme] = useState('light')
 
-    
     const experienceToNextLevel = Math.pow((level + 1) * 4 ,2)
 
     //Função executa uma unica vez quando componente exibido em tela
     useEffect(() => {
         Notification.requestPermission()
     }, [])
+
+    useEffect(() => {
+
+    }, [isLightTheme])
     
     useEffect(() => {
         Cookies.set('level', String(level))
@@ -56,6 +64,15 @@ export function ChallengesProvider({
         Cookies.set('challengesCompleted', String(challengesCompleted))
     }, [level, currentExperience, challengesCompleted])
     
+    function darkTheme() {
+        setIsLightTheme(false)
+        setTheme('dark')
+    }
+
+    function lightTheme() {
+        setIsLightTheme(true)
+        setTheme('light')
+    }
 
     function closeLevelModal(){
         setisLevelUpModalOpen(false)
@@ -107,10 +124,13 @@ export function ChallengesProvider({
             challengesCompleted, 
             startNewChallenge, 
             activeChellange,
+            theme,
             resetChallenge,
             experienceToNextLevel,
             completeChallenge,
-            closeLevelModal
+            closeLevelModal,
+            darkTheme,
+            lightTheme
              }}>
             { children } 
             { isLevelUpModalOpen && <LevelUpModal />}

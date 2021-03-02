@@ -8,6 +8,7 @@ import { CountdownProvider } from '../contexts/CountdownContext'
 import  styles  from '../styles/pages/Home.module.css'
 import { GetServerSideProps } from 'next'
 import { ChallengesProvider } from '../contexts/ChallengeContext'
+import { FooterDarkMode } from '../components/FooterDarkMode'
 
 interface HomePropos {
   level: number
@@ -38,6 +39,9 @@ export default function Home(props) {
             </div>
           </section>
         </CountdownProvider>
+        <footer>
+          <FooterDarkMode />
+        </footer>
       </div>
     </ChallengesProvider>
   )
