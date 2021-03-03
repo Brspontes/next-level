@@ -3,7 +3,7 @@
 This project is the result of training by rocketseat
 <hr />
 <h3>Technologies</h3>
-<ul>https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png
+<ul>
   <li>React JS</li>
   <li>Next JS</li>
   <li>TypeScript</li>
