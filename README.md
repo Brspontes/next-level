@@ -1,9 +1,9 @@
-# Next Level - Move.It
+# Next Level - Move.It <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png"  width="40rem"/>
 
 This project is the result of training by rocketseat
 <hr />
 <h3>Technologies</h3>
-<ul>
+<ul>https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png
   <li>React JS</li>
   <li>Next JS</li>
   <li>TypeScript</li>
